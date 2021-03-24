@@ -1,5 +1,5 @@
 """Models for movie ratings app."""
-
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -47,10 +47,6 @@ class Rating(db.Model):
 
     def __repr__(self):
         return f'<Rating rating_id={self.rating_id} score={self.score}>'
-
-        
-
-
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
